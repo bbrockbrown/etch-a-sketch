@@ -19,14 +19,8 @@ function genSquares(numSquares) {
             square.style.flex = `1 0 ${ratio}%`;
             square.style.height = `${ratio}%`;
             grid_container.appendChild(square);
-
-            square.addEventListener("mouseover", () => {
-                changeColor(square);
-            })
         }
     }
-
-    
 }
 
 grid_slider.oninput = function() {
@@ -35,9 +29,8 @@ grid_slider.oninput = function() {
 }
 
 
-function changeColor(square) {
-    const color = color_input.value;
-    square.style.backgroundColor = color;
+function changeColor(input) {
+    // something
 }
 
 genSquares(16);

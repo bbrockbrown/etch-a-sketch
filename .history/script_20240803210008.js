@@ -20,7 +20,7 @@ function genSquares(numSquares) {
             square.style.height = `${ratio}%`;
             grid_container.appendChild(square);
 
-            square.addEventListener("mouseover", () => {
+            square.addEventListener("mousedown", () => {
                 changeColor(square);
             })
         }

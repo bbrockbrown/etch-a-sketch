@@ -35,7 +35,7 @@ grid_slider.oninput = function() {
 }
 
 
-function changeColor(square) {
+function changeColor(input) {
     const color = color_input.value;
     square.style.backgroundColor = color;
 }
