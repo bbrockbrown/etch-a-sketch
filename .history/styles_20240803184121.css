@@ -1,0 +1,21 @@
+html, body {
+    height: 100vh;
+}
+
+body {
+    background-color: #49493c;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    padding: 0 30px 30px 30px;
+  }
+
+#grid-container {
+    display: flex;
+    flex-flow: row wrap;
+    height: 960px;
+    width: 960px;
+}
+
+.square {
+    border: 2px solid black;
+}

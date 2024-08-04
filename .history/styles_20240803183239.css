@@ -1,0 +1,12 @@
+#grid-container {
+    display: flex;
+    flex-flow: row wrap;
+    height: 960px;
+    width: 960px;
+}
+
+#grid-container > div {
+    margin: 0;
+    padding: 2px 2px;
+    border: 1px solid black;
+}

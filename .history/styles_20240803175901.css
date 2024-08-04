@@ -1,0 +1,5 @@
+#grid-container > div {
+    margin: 0;
+    padding: 2px 2px;
+    border: 1px solid black;
+}
