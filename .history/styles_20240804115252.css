@@ -27,7 +27,7 @@ body {
 
 .clr_input {
     width: 100%;
-    border: 4px
+    border: none;
 }
 
 .slider {
