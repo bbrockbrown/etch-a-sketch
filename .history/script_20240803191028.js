@@ -1,13 +1,7 @@
 const grid_container = document.querySelector("#grid_container");
-const grid_slider = document.querySelector("#grid_slider");
-const grid_size_display = document.querySelector("#grid_size");
-grid_size_display.innerHTML = `${grid_slider.value} x ${grid_slider.value}`;
-const color_btn = document.querySelector("#clr_btn");
+
 
 function genSquares(numSquares) {
-    // reset grid to be empty
-    grid_container.innerHTML = "";
-
     let ratio = 100 / numSquares;
 
     for (let i = 0; i < numSquares; i++) {
@@ -22,15 +16,6 @@ function genSquares(numSquares) {
         }
     }
 }
-
-grid_slider.oninput = function() {
-    grid_size_display.innerHTML = `${grid_slider.value} x ${grid_slider.value}`;
-    genSquares(grid_slider.value);
-}
-
-color_btn.addEventListener("click", () => {
-    
-})
 
 function changeColor(input) {
     // something

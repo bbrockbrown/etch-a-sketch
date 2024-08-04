@@ -28,12 +28,8 @@ grid_slider.oninput = function() {
     genSquares(grid_slider.value);
 }
 
-color_btn.addEventListener("click", () => {
-    
-})
-
 function changeColor(input) {
     // something
 }
 
-genSquares(16);
+genSquares(18);

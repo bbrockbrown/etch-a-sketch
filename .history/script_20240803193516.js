@@ -5,9 +5,6 @@ grid_size_display.innerHTML = `${grid_slider.value} x ${grid_slider.value}`;
 const color_btn = document.querySelector("#clr_btn");
 
 function genSquares(numSquares) {
-    // reset grid to be empty
-    grid_container.innerHTML = "";
-
     let ratio = 100 / numSquares;
 
     for (let i = 0; i < numSquares; i++) {
@@ -28,12 +25,8 @@ grid_slider.oninput = function() {
     genSquares(grid_slider.value);
 }
 
-color_btn.addEventListener("click", () => {
-    
-})
-
 function changeColor(input) {
     // something
 }
 
-genSquares(16);
+genSquares(18);
