@@ -64,12 +64,6 @@ function randomColor () {
     return randomColor
 }
 
-function clearGrid() {
-    squares = document.querySelectorAll(".square");
-    squares.forEach((square) => square.style.backgroundColor = "white");
-    
-}
-
 
 grid_slider.oninput = function() {
     grid_size_display.innerHTML = `${grid_slider.value} x ${grid_slider.value}`;
@@ -84,6 +78,6 @@ rand_color.addEventListener("click", () => {
     }
 });
 
-clear_grid_btn.addEventListener("click", () => (clearGrid()));
+clear_grid_btn.addEventListener("click", () => (grid_container.innerHTML = ""));
 
 genSquares(16);

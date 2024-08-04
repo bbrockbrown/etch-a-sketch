@@ -3,16 +3,12 @@ const grid_slider = document.querySelector("#grid_slider");
 const grid_size_display = document.querySelector("#grid_size");
 grid_size_display.innerHTML = `${grid_slider.value} x ${grid_slider.value}`;
 const color_input = document.querySelector("#clr_input");
-const rand_color = document.querySelector("#rand_clr");
-const clear_grid_btn = document.querySelector("#clear_grid");
 
-let is_rand = false;
 let mouseDown = false;
 
 // Event listeners to track mouse button state
 document.body.addEventListener('mousedown', () => (mouseDown = true));
 document.body.addEventListener('mouseup', () => (mouseDown = false));
-
 
 function genSquares(numSquares) {
     // reset grid to be empty
@@ -30,60 +26,24 @@ function genSquares(numSquares) {
             square.style.height = `${ratio}%`;
             grid_container.appendChild(square);
 
-            // if user clicks on square --> change color
-            square.addEventListener("mousedown", () => {
-                changeColor(square, is_rand);
-            });
-
-            // if user is over a square and is clicking down --> change color
-            // aka gives 'sketch' effect
             square.addEventListener("mouseover", () => {
-                if (mouseDown) {
-                    changeColor(square, is_rand);
-                }
-            });
+                changeColor(square);
+            })
         }
     }
 
     
 }
 
-function changeColor(square, is_random) {
-    if (is_random) {
-        const color = randomColor();
-        square.style.backgroundColor = color;
-    }
-    else {
-        const color = color_input.value;
-        square.style.backgroundColor = color;
-    }
-}
-
-function randomColor () {
-    const randomColor = `rgb(${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)})`;
-    return randomColor
-}
-
-function clearGrid() {
-    squares = document.querySelectorAll(".square");
-    squares.forEach((square) => square.style.backgroundColor = "white");
-    
-}
-
-
 grid_slider.oninput = function() {
     grid_size_display.innerHTML = `${grid_slider.value} x ${grid_slider.value}`;
     genSquares(grid_slider.value);
 }
 
-rand_color.addEventListener("click", () => {
-    if (is_rand) {
-        is_rand = false;
-    } else {
-        is_rand = true;
-    }
-});
 
-clear_grid_btn.addEventListener("click", () => (clearGrid()));
+function changeColor(square) {
+    const color = color_input.value;
+    square.style.backgroundColor = color;
+}
 
 genSquares(16);

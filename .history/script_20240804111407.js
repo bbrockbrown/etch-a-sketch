@@ -66,7 +66,7 @@ function randomColor () {
 
 function clearGrid() {
     squares = document.querySelectorAll(".square");
-    squares.forEach((square) => square.style.backgroundColor = "white");
+    squares.forEach((square) => square.style.backgroundColor = white);
     
 }
 

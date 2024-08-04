@@ -4,7 +4,6 @@ const grid_size_display = document.querySelector("#grid_size");
 grid_size_display.innerHTML = `${grid_slider.value} x ${grid_slider.value}`;
 const color_input = document.querySelector("#clr_input");
 const rand_color = document.querySelector("#rand_clr");
-const clear_grid_btn = document.querySelector("#clear_grid");
 
 let is_rand = false;
 let mouseDown = false;
@@ -48,6 +47,11 @@ function genSquares(numSquares) {
     
 }
 
+grid_slider.oninput = function() {
+    grid_size_display.innerHTML = `${grid_slider.value} x ${grid_slider.value}`;
+    genSquares(grid_slider.value);
+}
+
 function changeColor(square, is_random) {
     if (is_random) {
         const color = randomColor();
@@ -64,18 +68,6 @@ function randomColor () {
     return randomColor
 }
 
-function clearGrid() {
-    squares = document.querySelectorAll(".square");
-    squares.forEach((square) => square.style.backgroundColor = "white");
-    
-}
-
-
-grid_slider.oninput = function() {
-    grid_size_display.innerHTML = `${grid_slider.value} x ${grid_slider.value}`;
-    genSquares(grid_slider.value);
-}
-
 rand_color.addEventListener("click", () => {
     if (is_rand) {
         is_rand = false;
@@ -83,7 +75,5 @@ rand_color.addEventListener("click", () => {
         is_rand = true;
     }
 });
-
-clear_grid_btn.addEventListener("click", () => (clearGrid()));
 
 genSquares(16);

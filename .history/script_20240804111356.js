@@ -66,7 +66,7 @@ function randomColor () {
 
 function clearGrid() {
     squares = document.querySelectorAll(".square");
-    squares.forEach((square) => square.style.backgroundColor = "white");
+    squares.forEach((square) => square.style.backgroundColor = white);
     
 }
 
@@ -84,6 +84,6 @@ rand_color.addEventListener("click", () => {
     }
 });
 
-clear_grid_btn.addEventListener("click", () => (clearGrid()));
+clear_grid_btn.addEventListener("click", () => (grid_container.innerHTML = ""));
 
 genSquares(16);

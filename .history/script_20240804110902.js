@@ -48,6 +48,11 @@ function genSquares(numSquares) {
     
 }
 
+grid_slider.oninput = function() {
+    grid_size_display.innerHTML = `${grid_slider.value} x ${grid_slider.value}`;
+    genSquares(grid_slider.value);
+}
+
 function changeColor(square, is_random) {
     if (is_random) {
         const color = randomColor();
@@ -64,18 +69,6 @@ function randomColor () {
     return randomColor
 }
 
-function clearGrid() {
-    squares = document.querySelectorAll(".square");
-    squares.forEach((square) => square.style.backgroundColor = "white");
-    
-}
-
-
-grid_slider.oninput = function() {
-    grid_size_display.innerHTML = `${grid_slider.value} x ${grid_slider.value}`;
-    genSquares(grid_slider.value);
-}
-
 rand_color.addEventListener("click", () => {
     if (is_rand) {
         is_rand = false;
@@ -83,7 +76,5 @@ rand_color.addEventListener("click", () => {
         is_rand = true;
     }
 });
-
-clear_grid_btn.addEventListener("click", () => (clearGrid()));
 
 genSquares(16);
