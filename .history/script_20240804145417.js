@@ -81,16 +81,14 @@ grid_slider.oninput = function() {
 rand_color.addEventListener("click", () => {
     if (is_rand) {
         is_rand = false;
+        color_input_txt.textContent = `Current color: ${}!`;
         color_input.classList.remove("rainbow");
-        color_input.style.width = "30px";
-        color_input.style.backgroundColor = "conic-gradient(from 0deg, red, orange, yellow, green, blue, indigo, violet, red)";
-        color_input.style.border = "none";
     } else {
         is_rand = true;
+        color_input_txt.textContent = `Current color: Random!`;
         color_input.style.border = "none";
         color_input.style.outline = "none";
-        color_input.value = "#49493c";
-        color_input.style.background = "var(--bgColor)";
+        color_input.style.background = "conic-gradient(from 0deg, red, orange, yellow, green, blue, indigo, violet, red)";
         color_input.style.animation = "spin 5s linear infinite";
         color_input.style.color = "white";
         color_input.classList.add("rainbow");

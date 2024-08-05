@@ -90,7 +90,7 @@ rand_color.addEventListener("click", () => {
         color_input.style.border = "none";
         color_input.style.outline = "none";
         color_input.value = "#49493c";
-        color_input.style.background = "var(--bgColor)";
+        color_input.style.background = "conic-gradient(from 0deg, red, orange, yellow, green, blue, indigo, violet, red)";
         color_input.style.animation = "spin 5s linear infinite";
         color_input.style.color = "white";
         color_input.classList.add("rainbow");

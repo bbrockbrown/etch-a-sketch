@@ -32,14 +32,10 @@ body {
 @keyframes spin {
     0% {
         background: conic-gradient(from 0deg, red, orange, yellow, green, blue, indigo, violet, red);
-        background-color: conic-gradient(from 0deg, red, orange, yellow, green, blue, indigo, violet, red);
     }
     100% {
         background: conic-gradient(from 360deg, red, orange, yellow, green, blue, indigo, violet, red);
-        background-color: conic-gradient(from 0deg, red, orange, yellow, green, blue, indigo, violet, red);
     }
-
-    
 }
 
 input#clr_input {
@@ -49,13 +45,18 @@ input#clr_input {
 }
 
 .rainbow {
+    width: 200px;
+    height: 40px;
     border: none;
+    padding: 10px;
+    font-size: 16px;
     outline: none;
-    background-color: conic-gradient(from 0deg, red, orange, yellow, green, blue, indigo, violet, red);
+    background: conic-gradient(from 0deg, red, orange, yellow, green, blue, indigo, violet, red);
     animation: spin 5s linear infinite;
     background-size: 200% 200%;
     color: white;
-    background-clip: padding-box;
+    font-weight: bold;
+    animation: spin 5s linear infinite;
 }
 
 .slider {
