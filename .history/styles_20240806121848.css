@@ -1,8 +1,5 @@
 :root {
-    --bgColor: rgb(252, 52, 52);;
-    --header_text_color: #f7ab14;
-    --header_chrome_color: #000000;
-    --duration: 5s;
+    --bgColor: #49493c;;
 }
 
 html, body {
@@ -14,7 +11,6 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     color: white;
     padding: 0 30px 30px 30px;
-    margin: 0;
 }
 
 .header {
@@ -22,55 +18,20 @@ body {
     margin-bottom: 50px;
     overflow: hidden;
     min-width: max-content;
-    color: var(--header_text_color)
-}
-
-.shine, .chrome {
-	font-size: 3em;
-	margin: 0 auto;
-	margin-bottom: 1em;
-	font-weight: bold;
-}
-
-.chrome {
-	background: #222 -webkit-gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #fff)) 0 0 no-repeat;
-	background-image: -webkit-linear-gradient(-40deg, transparent 0%, transparent 40%, #fff 50%, transparent 60%, transparent 100%);
-	-webkit-background-size: 200px;
-	color: var(--header_chrome_color);
-	-webkit-background-clip: text;
-	-webkit-animation-name: shine;
-	-webkit-animation-duration: var(--duration);
-	-webkit-animation-iteration-count: infinite;
-	text-shadow: 0 0px 0px rgba(255, 255, 255, 0.5);
-}
-
-@-webkit-keyframes shine {
-	0%, 10% {
-		background-position: -1000px;
-	}
-	20% {
-		background-position: top left;
-	}
-	90% {
-		background-position: top right;
-	}
-	100% {
-		background-position: 1000px;
-	}
 }
 
 .main {
     display: flex;
-    height: auto;
+    height: 100%;
     flex-flow: column wrap;
     align-items: center;
    
 }
 
 .grid_ui {
+    width: 100%;
     display: flex;
     flex-flow: row nowrap;
-    background-color: white;
 }
 
 
@@ -92,28 +53,16 @@ body {
     flex-flow: column nowrap;
     align-items: center;
     margin: 0 auto;
-    color: gray;
 }
 
-.color_input {
-    display: flex;
-    flex-flow: row wrap;
-    align-items: center;
-    gap: 10px;
-}
-
-#color_input_txt {
-    font-size: 30px;
+.color_input_text {
+    font-size: 32px;
 }
 
 input#clr_input {
-    width: 50px;
-    height: 50px;
-    padding: 0;
-    margin: 0;
+    width: 30px;
     background-color: var(--bgColor);
     border: none;
-    align-self: baseline;
 }
 
 p {
@@ -193,31 +142,4 @@ button, input {
     flex-shrink: 0;
     height:initial;
     width: initial;
-}
-
-.circle-container {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-}
-
-.circle {
-    border: none;
-    background-color: white;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    padding: 0;
-    margin: 0;
-}
-
-.inner-circle {
-    border: none;
-    background-color: rgb(198, 198, 198);
-    border-radius: 50%;
-    width: 80%;
-    height: 80%;
-    margin: auto;
-    margin-top: 10%;
-    padding: 0;
 }

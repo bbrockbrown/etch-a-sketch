@@ -57,6 +57,17 @@ function changeColor(square, is_random) {
     else {
         const color = color_input.value;
         square.style.backgroundColor = color;
+        grid_slider.style.setProperty('--thumb-color', color);
+        const style = document.createElement('style');
+        style.innerHTML = `
+            #slider::-webkit-slider-thumb {
+                background: ${color};
+            }
+            #slider::-moz-range-thumb {
+                background: ${color};
+            }
+        `;
+        document.head.appendChild(style);
     }
     
 }

@@ -88,4 +88,19 @@ rand_color.addEventListener("click", () => {
 
 clear_grid_btn.addEventListener("click", () => (clearGrid()));
 
+color_input.addEventListener("input", () => {
+    const color = color_input.value
+    grid_slider.style.setProperty('--thumb-color', color);
+    const style = document.createElement('style');
+    style.innerHTML = `
+        #slider::-webkit-slider-thumb {
+            background: ${color};
+        }
+        #slider::-moz-range-thumb {
+            background: ${color};
+        }
+    `;
+    document.head.appendChild(style);
+});
+
 genSquares(16);

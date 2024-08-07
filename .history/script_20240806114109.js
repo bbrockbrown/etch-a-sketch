@@ -57,6 +57,7 @@ function changeColor(square, is_random) {
     else {
         const color = color_input.value;
         square.style.backgroundColor = color;
+        grid_slider.style.setProperty('--thumb-color', color);
     }
     
 }

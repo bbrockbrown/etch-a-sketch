@@ -1,7 +1,6 @@
 :root {
     --bgColor: rgb(252, 52, 52);;
-    --header_text_color: #f7ab14;
-    --header_chrome_color: #000000;
+    --header_text_color: ;
     --duration: 5s;
 }
 
@@ -22,7 +21,7 @@ body {
     margin-bottom: 50px;
     overflow: hidden;
     min-width: max-content;
-    color: var(--header_text_color)
+    color: #f7b530;
 }
 
 .shine, .chrome {
@@ -32,14 +31,25 @@ body {
 	font-weight: bold;
 }
 
+.shine {
+	background: #222 -webkit-gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #fff)) 0 0 no-repeat;
+	-webkit-background-size: 150px;
+	color: $text-color;
+	-webkit-background-clip: text;
+	-webkit-animation-name: shine;
+	-webkit-animation-duration: $duration;
+	-webkit-animation-iteration-count: infinite;
+	text-shadow: 0 0px 0px rgba(255, 255, 255, 0.5);
+}
+
 .chrome {
 	background: #222 -webkit-gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #fff)) 0 0 no-repeat;
 	background-image: -webkit-linear-gradient(-40deg, transparent 0%, transparent 40%, #fff 50%, transparent 60%, transparent 100%);
 	-webkit-background-size: 200px;
-	color: var(--header_chrome_color);
+	color: $text-color;
 	-webkit-background-clip: text;
 	-webkit-animation-name: shine;
-	-webkit-animation-duration: var(--duration);
+	-webkit-animation-duration: $duration;
 	-webkit-animation-iteration-count: infinite;
 	text-shadow: 0 0px 0px rgba(255, 255, 255, 0.5);
 }

@@ -32,11 +32,22 @@ body {
 	font-weight: bold;
 }
 
+.shine {
+	background: #222 -webkit-gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #fff)) 0 0 no-repeat;
+	-webkit-background-size: 150px;
+	color: var(--header_text_color);
+	-webkit-background-clip: text;
+	-webkit-animation-name: shine;
+	-webkit-animation-duration: var(--duration);
+	-webkit-animation-iteration-count: infinite;
+	text-shadow: 0 0px 0px rgba(255, 255, 255, 0.5);
+}
+
 .chrome {
 	background: #222 -webkit-gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #fff)) 0 0 no-repeat;
 	background-image: -webkit-linear-gradient(-40deg, transparent 0%, transparent 40%, #fff 50%, transparent 60%, transparent 100%);
 	-webkit-background-size: 200px;
-	color: var(--header_chrome_color);
+	color: var(--header_text_color);
 	-webkit-background-clip: text;
 	-webkit-animation-name: shine;
 	-webkit-animation-duration: var(--duration);
