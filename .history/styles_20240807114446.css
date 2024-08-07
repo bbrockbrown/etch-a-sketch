@@ -47,15 +47,13 @@ body {
     height: auto;
     flex-flow: column wrap;
     align-items: center;
-    width: 100%;
+   
 }
 
 .grid_ui {
     display: flex;
     flex-flow: row nowrap;
-    background-color: var(--bgColor);
-    width: inherit;
-    justify-content: flex-start;
+    background-color: white;
 }
 
 @keyframes chrome {
@@ -72,8 +70,8 @@ body {
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
-    color: white;
-    background-color: var(--bgColor);
+    margin: 0 auto;
+    color: gray;
 }
 
 .color_input {
@@ -92,7 +90,7 @@ input#clr_input {
     height: 50px;
     padding: 0;
     margin: 0;
-    background-color: var(--bgColor);
+    background-color: white;
     border: none;
     align-self: baseline;
 }
@@ -118,6 +116,11 @@ button, input {
     opacity: 0.8;
     -webkit-transition: .2s;
     transition: opacity .2s;
+    border: linear-gradient(90deg, #fff, var(--header_text_color), white, var(--header_text_color), white) 2px solid;
+    background-size: 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: chrome var(--duration) linear infinite;
 }
 
 .slider:hover {
@@ -163,8 +166,9 @@ button, input {
     flex-flow: row wrap;
     height: 750px;
     width: 750px;
-    min-width: 750px;
-    justify-self: center;
+    margin-left: auto;
+    margin-right: auto;
+    min-width: 750px;;
 }
 
 

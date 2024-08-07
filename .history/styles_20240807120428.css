@@ -72,6 +72,7 @@ body {
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
+    margin: 0 auto;
     color: white;
     background-color: var(--bgColor);
 }
@@ -163,8 +164,10 @@ button, input {
     flex-flow: row wrap;
     height: 750px;
     width: 750px;
+    margin-left: auto;
+    margin-right: auto;
     min-width: 750px;
-    justify-self: center;
+    justify-items: center;
 }
 
 

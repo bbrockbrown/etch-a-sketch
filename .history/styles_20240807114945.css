@@ -47,15 +47,14 @@ body {
     height: auto;
     flex-flow: column wrap;
     align-items: center;
-    width: 100%;
+   
 }
 
 .grid_ui {
     display: flex;
     flex-flow: row nowrap;
-    background-color: var(--bgColor);
-    width: inherit;
-    justify-content: flex-start;
+    background-color: white;
+    width: max-content;
 }
 
 @keyframes chrome {
@@ -72,7 +71,8 @@ body {
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
-    color: white;
+    margin: 0 auto;
+    color: gray;
     background-color: var(--bgColor);
 }
 
@@ -92,7 +92,7 @@ input#clr_input {
     height: 50px;
     padding: 0;
     margin: 0;
-    background-color: var(--bgColor);
+    background-color: white;
     border: none;
     align-self: baseline;
 }
@@ -163,8 +163,9 @@ button, input {
     flex-flow: row wrap;
     height: 750px;
     width: 750px;
-    min-width: 750px;
-    justify-self: center;
+    margin-left: auto;
+    margin-right: auto;
+    min-width: 750px;;
 }
 
 

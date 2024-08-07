@@ -5,7 +5,7 @@
     --bgColor: rgb(252, 52, 52);;
     --header_text_color: #f7ab14;
     --header_chrome_color: #000000;
-    --duration: 7s;
+    --duration: 5s;
 }
 
 html, body {
@@ -25,7 +25,7 @@ body {
     margin-bottom: 50px;
     overflow: hidden;
     min-width: max-content;
-    color: white;
+    color: var(--header_text_color)
 }
 
 .chrome {
@@ -34,28 +34,41 @@ body {
     margin-bottom: 1em;
     font-weight: bold;
     font-family: 'Open Sans', sans-serif;
-    background: linear-gradient(90deg, #fff, var(--header_text_color), white, var(--header_text_color), white);
+    background: linear-gradient(90deg, #fff, var(--header_text_color), white, var(--header_text_color), white, var(--header_text_color));
     background-size: 200%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: chrome var(--duration) linear infinite;
+    animation: chrome 4s linear infinite;
 }
 
+
+@-webkit-keyframes shine {
+	0%, 10% {
+		background-position: -1000px;
+	}
+	20% {
+		background-position: top left;
+	}
+	90% {
+		background-position: top right;
+	}
+	100% {
+		background-position: 1000px;
+	}
+}
 
 .main {
     display: flex;
     height: auto;
     flex-flow: column wrap;
     align-items: center;
-    width: 100%;
+   
 }
 
 .grid_ui {
     display: flex;
     flex-flow: row nowrap;
-    background-color: var(--bgColor);
-    width: inherit;
-    justify-content: flex-start;
+    background-color: white;
 }
 
 @keyframes chrome {
@@ -72,8 +85,8 @@ body {
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
-    color: white;
-    background-color: var(--bgColor);
+    margin: 0 auto;
+    color: gray;
 }
 
 .color_input {
@@ -111,8 +124,7 @@ button, input {
     width: 75%;
     min-width: 50%;
     height: 15px;
-    border-radius: 10px;
-    border: black 2px solid;  
+    border-radius: 10px;  
     background: white;
     outline: none;
     opacity: 0.8;
@@ -163,8 +175,9 @@ button, input {
     flex-flow: row wrap;
     height: 750px;
     width: 750px;
-    min-width: 750px;
-    justify-self: center;
+    margin-left: auto;
+    margin-right: auto;
+    min-width: 750px;;
 }
 
 

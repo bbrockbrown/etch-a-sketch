@@ -1,15 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap');
-
-
 :root {
-    --bgColor: rgb(252, 52, 52);;
+    --bgColor: rgb(252, 52, 52);
     --header_text_color: #f7ab14;
     --header_chrome_color: #000000;
-    --duration: 7s;
+    --duration: 5s;
 }
 
 html, body {
     height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
 }
 
 body {
@@ -18,6 +19,9 @@ body {
     color: white;
     padding: 0 30px 30px 30px;
     margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .header {
@@ -25,37 +29,20 @@ body {
     margin-bottom: 50px;
     overflow: hidden;
     min-width: max-content;
-    color: white;
+    color: var(--header_text_color);
 }
 
 .chrome {
-	font-size: 3em;
+    font-size: 3em;
     margin: 0 auto;
     margin-bottom: 1em;
     font-weight: bold;
     font-family: 'Open Sans', sans-serif;
-    background: linear-gradient(90deg, #fff, var(--header_text_color), white, var(--header_text_color), white);
+    background: linear-gradient(90deg, #fff, #000, #555, #000, #fff);
     background-size: 200%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: chrome var(--duration) linear infinite;
-}
-
-
-.main {
-    display: flex;
-    height: auto;
-    flex-flow: column wrap;
-    align-items: center;
-    width: 100%;
-}
-
-.grid_ui {
-    display: flex;
-    flex-flow: row nowrap;
-    background-color: var(--bgColor);
-    width: inherit;
-    justify-content: flex-start;
+    animation: chrome 4s linear infinite;
 }
 
 @keyframes chrome {
@@ -67,18 +54,36 @@ body {
     }
 }
 
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.grid_ui {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    width: 100%;
+    height: 100%;
+}
 
 .grid_buttons_sliders {
     display: flex;
-    flex-flow: column nowrap;
+    flex-direction: column;
     align-items: center;
-    color: white;
-    background-color: var(--bgColor);
+    margin: 0 auto;
+    color: gray;
 }
 
 .color_input {
     display: flex;
-    flex-flow: row wrap;
+    flex-direction: row;
     align-items: center;
     gap: 10px;
 }
@@ -112,7 +117,6 @@ button, input {
     min-width: 50%;
     height: 15px;
     border-radius: 10px;
-    border: black 2px solid;  
     background: white;
     outline: none;
     opacity: 0.8;
@@ -121,7 +125,7 @@ button, input {
 }
 
 .slider:hover {
-    opacity: 1; /* Fully shown on mouse-over */
+    opacity: 1;
 }
 
 .slider::-webkit-slider-thumb {
@@ -129,11 +133,10 @@ button, input {
     appearance: none;
     width: 20px;
     height: 20px;
-    border-radius: 50%; 
+    border-radius: 50%;
     background: pink;
     cursor: pointer;
 }
-
 
 .slider::-moz-range-thumb {
     width: 20px;
@@ -143,14 +146,7 @@ button, input {
     cursor: pointer;
 }
 
-#clear_grid {
-    width: 50%;
-    min-width: min-content;
-    border-radius: 4px;
-    border: 2px solid black;
-}
-
-#rand_clr {
+#clear_grid, #rand_clr {
     width: 50%;
     min-width: min-content;
     border-radius: 4px;
@@ -160,25 +156,22 @@ button, input {
 #grid_container {
     background-color: white;
     display: flex;
-    flex-flow: row wrap;
+    flex-wrap: wrap;
     height: 750px;
     width: 750px;
-    min-width: 750px;
-    justify-self: center;
+    margin: 0 auto;
 }
-
 
 .square {
     box-sizing: border-box;
     border: 1px solid black;
     flex-shrink: 0;
-    height:initial;
+    height: initial;
     width: initial;
 }
 
 .circle-container {
     display: flex;
-    flex-flow: row nowrap;
     justify-content: space-between;
 }
 
