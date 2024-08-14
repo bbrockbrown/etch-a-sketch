@@ -111,7 +111,7 @@ color_input.addEventListener("input", () => {
     #grid_slider {
         -webkit-appearance: none;
         width: 200px;
-        height: 20px;
+        height: 15px;
         border-radius: 10px;
         border: black 2px solid;  
         background: white;
@@ -128,8 +128,8 @@ color_input.addEventListener("input", () => {
     #grid_slider::-webkit-slider-thumb {
         -webkit-appearance: none;
         appearance: none;
-        width: 25px;
-        height: 25px;
+        width: 20px;
+        height: 20px;
         border-radius: 50%; 
         background: ${color_input.value};
         cursor: pointer;

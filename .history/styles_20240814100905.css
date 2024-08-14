@@ -40,10 +40,10 @@ body {
 
 .chrome {
 	font-size: 3em;
-    margin: 50px auto 20px auto;
+    margin: 0 auto;
+    margin-bottom: 1em;
     font-weight: bold;
     font-family: 'EtchFont', sans-serif;
-    font-size: 70px;
     background: linear-gradient(90deg, #fff, var(--header_text_color), white, var(--header_text_color), white);
     background-size: 200%;
     -webkit-background-clip: text;
@@ -85,8 +85,7 @@ body {
 .grid_buttons_sliders {
     display: flex;
     flex-flow: column nowrap;
-    align-items: center;
-    justify-content: flex-start;
+    align-items: flex-start;
     color: white;
     background-color: var(--bgColor);
     margin-left: auto;
@@ -96,21 +95,19 @@ body {
     max-width: 250px;
 }
 
+.grid_buttons_sliders > * {
+    margin-bottom: 50px;
+}
+
 .color_input {
     display: flex;
     flex-flow: row wrap;
     align-items: center;
     gap: 10px;
-    margin-bottom: 30px;
 }
 
 #color_input_txt {
     font-size: 30px;
-}
-
-.size {
-    font-size: 20px;
-    margin-bottom: 50px;
 }
 
 input#clr_input {
@@ -123,14 +120,10 @@ input#clr_input {
     align-self: baseline;
 }
 
-p, #color_input_txt {
+p {
     text-align: center;
     margin: 0;
-    font-family: 'Open Sans', sans-serif;
-    text-shadow: 3px 3px 8px rgba(247, 171, 20, 0.882);
 }
-
-
 
 button, input {
     overflow: scroll;
@@ -150,25 +143,21 @@ button, input {
 
 #grid_slider {
     -webkit-appearance: none;
-    width: 200px;
-    margin: 0;
-    margin-top: 5px;
-    margin-bottom: 50px;
-    padding: 0;
-    height: 20px;
+    width: 75%;
+    min-width: 50%;
+    height: 15px;
     border-radius: 10px;
     border: black 2px solid;  
     background: white;
     outline: none;
-    flex-shrink: 0;
 }
 
 
 #grid_slider::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
-    width: 25px;
-    height: 25px;
+    width: 20px;
+    height: 20px;
     border-radius: 50%; 
     background: black;
     cursor: pointer;
@@ -186,7 +175,6 @@ button, input {
     min-width: min-content;
     border-radius: 4px;
     border: 2px solid black;
-    margin-bottom: 20px;
 }
 
 #clear_grid, #rand_clr {
