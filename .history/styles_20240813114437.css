@@ -134,8 +134,7 @@ button, input {
     100% { background-color: red; }
 }
 
-
-#grid_slider {
+.slider {
     -webkit-appearance: none;
     width: 75%;
     min-width: 50%;
@@ -144,18 +143,24 @@ button, input {
     border: black 2px solid;  
     background: white;
     outline: none;
+    opacity: 0.8;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
 }
 
+.slider:hover {
+    opacity: 1; /* Fully shown on mouse-over */
+}
 
-#grid_slider::-webkit-slider-thumb {
+.slider::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
     width: 20px;
     height: 20px;
     border-radius: 50%; 
-    background: black;
+    background: pink;
     cursor: pointer;
-    animation: rainbow 2s linear infinite;
+    transition: background-color 0.5s;
 }
 
 #clear_grid {

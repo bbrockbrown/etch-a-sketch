@@ -155,7 +155,6 @@ button, input {
     border-radius: 50%; 
     background: black;
     cursor: pointer;
-    animation: rainbow 2s linear infinite;
 }
 
 #clear_grid {

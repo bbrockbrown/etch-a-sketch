@@ -9,18 +9,15 @@
 }
 
 html, body {
-    height: 100%;
-    margin: 0;
+    height: 100vh;
 }
 
 body {
-    display: flex;
-    flex-flow: column wrap;
-    justify-content: flex-start;
-    align-items: flex-start;
     background-color: var(--bgColor);
     font-family: Arial, Helvetica, sans-serif;
     color: white;
+    padding: 0 30px 30px 30px;
+    margin: 0;
 }
 
 .header {
@@ -29,7 +26,6 @@ body {
     overflow: hidden;
     min-width: max-content;
     color: white;
-    margin-bottom: -40px;
 }
 
 .chrome {
@@ -48,17 +44,16 @@ body {
 
 .main {
     display: flex;
+    height: auto;
     flex-flow: column wrap;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     width: 100%;
-    flex-grow: 1;
-    height: 100%;
 }
 
 .grid_ui {
     display: flex;
-    flex-flow: row nowrap;
+    flex-flow: row wrap;
     background-color: var(--bgColor);
     width: inherit;
     justify-content: space-around;
@@ -83,14 +78,6 @@ body {
     color: white;
     background-color: var(--bgColor);
     margin-left: auto;
-    height: 100%;
-    width: 250px;
-    min-width: 250px;
-    max-width: 250px;
-}
-
-.grid_buttons_sliders > * {
-    margin-bottom: 50px;
 }
 
 .color_input {
@@ -123,19 +110,7 @@ button, input {
     overflow: scroll;
 }
 
-@keyframes rainbow {
-    0% { background-color: red; }
-    14% { background-color: orange; }
-    28% { background-color: yellow; }
-    42% { background-color: green; }
-    57% { background-color: blue; }
-    71% { background-color: indigo; }
-    85% { background-color: violet; }
-    100% { background-color: red; }
-}
-
-
-#grid_slider {
+.slider {
     -webkit-appearance: none;
     width: 75%;
     min-width: 50%;
@@ -144,18 +119,32 @@ button, input {
     border: black 2px solid;  
     background: white;
     outline: none;
+    opacity: 0.8;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
 }
 
+.slider:hover {
+    opacity: 1; /* Fully shown on mouse-over */
+}
 
-#grid_slider::-webkit-slider-thumb {
+.slider::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
     width: 20px;
     height: 20px;
     border-radius: 50%; 
-    background: black;
+    background: pink;
     cursor: pointer;
-    animation: rainbow 2s linear infinite;
+}
+
+
+.slider::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: pink;
+    cursor: pointer;
 }
 
 #clear_grid {
@@ -197,26 +186,22 @@ button, input {
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
-    width: 100%;
-    align-self: flex-end;
+    align-items: flex-end;
+    height: 100%;
+}
+
+.circle, .inner-circle {
+
 }
 
 .circle {
     border: none;
     background-color: white;
     border-radius: 50%;
-    width: 150px;
-    height: 150px;
+    width: 50px;
+    height: 50px;
     padding: 0;
-    margin: 0
-}
-
-#left-outer {
-    margin: 0 0 20px 20px;
-}
-
-#right-outer {
-    margin: 0 20px 20px 0;
+    margin: 0;
 }
 
 .inner-circle {

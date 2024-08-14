@@ -134,6 +134,9 @@ button, input {
     100% { background-color: red; }
 }
 
+.rainbow::-webkit-slider-thumb {
+    animation: rainbow 2s linear infinite;
+}
 
 #grid_slider {
     -webkit-appearance: none;
@@ -155,7 +158,6 @@ button, input {
     border-radius: 50%; 
     background: black;
     cursor: pointer;
-    animation: rainbow 2s linear infinite;
 }
 
 #clear_grid {

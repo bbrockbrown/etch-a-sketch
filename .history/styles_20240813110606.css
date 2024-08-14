@@ -89,8 +89,8 @@ body {
     max-width: 250px;
 }
 
-.grid_buttons_sliders > * {
-    margin-bottom: 50px;
+.grid_buttons_sliders > {
+
 }
 
 .color_input {
@@ -123,19 +123,7 @@ button, input {
     overflow: scroll;
 }
 
-@keyframes rainbow {
-    0% { background-color: red; }
-    14% { background-color: orange; }
-    28% { background-color: yellow; }
-    42% { background-color: green; }
-    57% { background-color: blue; }
-    71% { background-color: indigo; }
-    85% { background-color: violet; }
-    100% { background-color: red; }
-}
-
-
-#grid_slider {
+.slider {
     -webkit-appearance: none;
     width: 75%;
     min-width: 50%;
@@ -144,18 +132,32 @@ button, input {
     border: black 2px solid;  
     background: white;
     outline: none;
+    opacity: 0.8;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
 }
 
+.slider:hover {
+    opacity: 1; /* Fully shown on mouse-over */
+}
 
-#grid_slider::-webkit-slider-thumb {
+.slider::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
     width: 20px;
     height: 20px;
     border-radius: 50%; 
-    background: black;
+    background: pink;
     cursor: pointer;
-    animation: rainbow 2s linear infinite;
+}
+
+
+.slider::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: pink;
+    cursor: pointer;
 }
 
 #clear_grid {

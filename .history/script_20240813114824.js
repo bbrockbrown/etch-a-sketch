@@ -87,16 +87,8 @@ rand_color.addEventListener("click", () => {
     } else {
         is_rand = true;
         color_input.style.display = "none";
-        color_input_txt.innerHTML = "Current Color: Random!!!";
-
-        let styleElement = document.getElementById('rainbow-thumb');
-        if (!styleElement) {
-            styleElement = document.createElement('style');
-            styleElement.id = 'rainbow-thumb';
-            document.head.appendChild(styleElement);
-        }
-        styleElement.innerHTML = `
-        `
+        grid_slider.classList.add('rainbow');
+        color_input_txt.innerHTML = "Current Color: Random!!!"
     }
 });
 
@@ -108,7 +100,7 @@ color_input.addEventListener("input", () => {
             document.head.appendChild(styleElement);
         }
     styleElement.innerHTML = `
-    #grid_slider {
+    .slider {
         -webkit-appearance: none;
         width: 75%;
         min-width: 50%;
@@ -122,11 +114,11 @@ color_input.addEventListener("input", () => {
         transition: opacity .2s;
     }
 
-    #grid_slider:hover {
+    .slider:hover {
         opacity: 1; /* Fully shown on mouse-over */
     }
 
-    #grid_slider::-webkit-slider-thumb {
+    .slider::-webkit-slider-thumb {
         -webkit-appearance: none;
         appearance: none;
         width: 20px;

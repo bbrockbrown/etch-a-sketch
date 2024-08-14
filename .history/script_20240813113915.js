@@ -83,32 +83,17 @@ rand_color.addEventListener("click", () => {
         is_rand = false;
         color_input.style.display = "block";
         color_input_txt.innerHTML = "Current Color:";
-        grid_slider.classList.remove('rainbow');
     } else {
         is_rand = true;
         color_input.style.display = "none";
-        color_input_txt.innerHTML = "Current Color: Random!!!";
-
-        let styleElement = document.getElementById('rainbow-thumb');
-        if (!styleElement) {
-            styleElement = document.createElement('style');
-            styleElement.id = 'rainbow-thumb';
-            document.head.appendChild(styleElement);
-        }
-        styleElement.innerHTML = `
-        `
+        color_input_txt.innerHTML = "Current Color: Random!!!"
+        
     }
 });
 
 color_input.addEventListener("input", () => {
-    let styleElement = document.getElementById('slider-thumb-style');
-        if (!styleElement) {
-            styleElement = document.createElement('style');
-            styleElement.id = 'slider-thumb-style';
-            document.head.appendChild(styleElement);
-        }
-    styleElement.innerHTML = `
-    #grid_slider {
+    color_input.innerHTML = `
+    .slider {
         -webkit-appearance: none;
         width: 75%;
         min-width: 50%;
@@ -122,11 +107,11 @@ color_input.addEventListener("input", () => {
         transition: opacity .2s;
     }
 
-    #grid_slider:hover {
+    .slider:hover {
         opacity: 1; /* Fully shown on mouse-over */
     }
 
-    #grid_slider::-webkit-slider-thumb {
+    .slider::-webkit-slider-thumb {
         -webkit-appearance: none;
         appearance: none;
         width: 20px;

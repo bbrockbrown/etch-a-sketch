@@ -82,60 +82,11 @@ rand_color.addEventListener("click", () => {
     if (is_rand) {
         is_rand = false;
         color_input.style.display = "block";
-        color_input_txt.innerHTML = "Current Color:";
-        grid_slider.classList.remove('rainbow');
     } else {
         is_rand = true;
         color_input.style.display = "none";
-        color_input_txt.innerHTML = "Current Color: Random!!!";
-
-        let styleElement = document.getElementById('rainbow-thumb');
-        if (!styleElement) {
-            styleElement = document.createElement('style');
-            styleElement.id = 'rainbow-thumb';
-            document.head.appendChild(styleElement);
-        }
-        styleElement.innerHTML = `
-        `
     }
 });
-
-color_input.addEventListener("input", () => {
-    let styleElement = document.getElementById('slider-thumb-style');
-        if (!styleElement) {
-            styleElement = document.createElement('style');
-            styleElement.id = 'slider-thumb-style';
-            document.head.appendChild(styleElement);
-        }
-    styleElement.innerHTML = `
-    #grid_slider {
-        -webkit-appearance: none;
-        width: 75%;
-        min-width: 50%;
-        height: 15px;
-        border-radius: 10px;
-        border: black 2px solid;  
-        background: white;
-        outline: none;
-        opacity: 0.8;
-        -webkit-transition: .2s;
-        transition: opacity .2s;
-    }
-
-    #grid_slider:hover {
-        opacity: 1; /* Fully shown on mouse-over */
-    }
-
-    #grid_slider::-webkit-slider-thumb {
-        -webkit-appearance: none;
-        appearance: none;
-        width: 20px;
-        height: 20px;
-        border-radius: 50%; 
-        background: ${color_input.value};
-        cursor: pointer;
-    }`;
-})
 
 clear_grid_btn.addEventListener("click", () => (clearGrid()));
 

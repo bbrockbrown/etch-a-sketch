@@ -87,16 +87,8 @@ rand_color.addEventListener("click", () => {
     } else {
         is_rand = true;
         color_input.style.display = "none";
-        color_input_txt.innerHTML = "Current Color: Random!!!";
-
-        let styleElement = document.getElementById('rainbow-thumb');
-        if (!styleElement) {
-            styleElement = document.createElement('style');
-            styleElement.id = 'rainbow-thumb';
-            document.head.appendChild(styleElement);
-        }
-        styleElement.innerHTML = `
-        `
+        grid_slider.classList.add('rainbow');
+        color_input_txt.innerHTML = "Current Color: Random!!!"
     }
 });
 
