@@ -171,25 +171,6 @@ button, input {
     border: 2px solid black;
 }
 
-#clear_grid, #rand_clr {
-    width: 80%;
-    padding: 10px 20px;
-    border-radius: 8px;
-    border: none;
-    background: linear-gradient(145deg, #f7ab14, #ef4b35);
-    color: white;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: transform 0.2s, box-shadow 0.2s;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-}
-
-#clear_grid:hover, #rand_clr:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
-}
-
 #grid_container {
     background-color: white;
     display: flex;
