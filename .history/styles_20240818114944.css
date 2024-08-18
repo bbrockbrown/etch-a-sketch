@@ -262,7 +262,7 @@ button, input {
     overflow: hidden;
 }
 
-#left-outer::before {
+.circle::before {
     content: '';
     position: absolute;
     top: 50%;
@@ -280,23 +280,6 @@ button, input {
     animation: spin 10s linear infinite;
 }
 
-#right-outer::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 200%;
-    height: 200%;
-    background: repeating-conic-gradient(
-      from 0deg,
-      rgb(0, 0, 0) 0deg,
-      transparent 1deg 10deg
-    );
-    transform: translate(-50%, -50%);
-    border-radius: 50%;
-    z-index: 1;
-    animation: revSpin 10s linear infinite;
-}
 
 
 .inner-circle {
@@ -339,7 +322,8 @@ button, input {
     margin: 0 0 20px 20px;
 }
 
-#right-outer {
+#right-outer::before {
     justify-self: flex-end;
     margin: 0 20px 20px 0;
+    animation: revSpin 10s linear infinite;
 }

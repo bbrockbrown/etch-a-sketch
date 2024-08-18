@@ -24,18 +24,15 @@
 
                 <div class="grid_buttons_sliders">
                     <div class="color_input">
-                        <div class="color_input_row">
-                            <label for="color_select" id="color_input_txt">Color: </label>
-                            <input type="color" id="clr_input" name="clr_input" value="#000000" /></label>
-                        </div>
-                        <p id='size'>Grid size: <span id="grid_size"></span> <br> <input type="range" min="1" max="100" value="16" class="slider" id="grid_slider"></p>
+                        <label for="color_select" id="color_input_txt">Color: </label>
+                        <input type="color" id="clr_input" name="clr_input" value="#000000" /></label>
                     </div>
-                    <div class="grid_buttons">
-                        <button id="rand_clr">Generate random colors!</button>
-                        <button id="clear_grid">Clear grid</button>
-                    </div>
+                    <p id='size'>Grid size: <span id="grid_size"></span> <br> <input type="range" min="1" max="100" value="16" class="slider" id="grid_slider"></p>
+                    <button id="rand_clr">Generate random colors!</button>
+                    <button id="clear_grid">Clear grid</button>
+                    <div id="drawing"> <!-- Placeholder for grid squares (borderless) --> </div>
                 </div>
-
+                
                 <div class="circle" id="right-outer"> <div class="inner-circle"> <!-- Circle placeholder --> </div> </div>
             </div>
         </div>

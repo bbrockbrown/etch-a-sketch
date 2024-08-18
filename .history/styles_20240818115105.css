@@ -339,7 +339,7 @@ button, input {
     margin: 0 0 20px 20px;
 }
 
-#right-outer {
+#right-outer::before {
     justify-self: flex-end;
     margin: 0 20px 20px 0;
 }

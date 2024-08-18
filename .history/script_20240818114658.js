@@ -1,5 +1,4 @@
 const grid_container = document.querySelector("#grid_container");
-let isRotating = false;
 const grid_slider = document.querySelector("#grid_slider");
 const grid_size_display = document.querySelector("#grid_size");
 grid_size_display.innerHTML = `${grid_slider.value} x ${grid_slider.value}`;
@@ -62,87 +61,7 @@ function changeColor(square, is_random) {
     
 }
 
-grid_container.addEventListener("mousedown", () => {
-    let styleElement = document.getElementById('rotate-circle');
-    if (!styleElement) {
-        styleElement = document.createElement('style');
-        styleElement.id = 'rotate-circle';
-        document.head.appendChild(styleElement);
-    }
-    if (isRotating) {
-        styleElement.innerHTML = `
-        #left-outer::before {
-        content: '';
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 200%;
-        height: 200%;
-        background: repeating-conic-gradient(
-        from 0deg,
-        rgb(0, 0, 0) 0deg,
-        transparent 1deg 10deg
-        );
-        transform: translate(-50%, -50%);
-        border-radius: 50%;
-        z-index: 1;
-        }
 
-        #right-outer::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 200%;
-            height: 200%;
-            background: repeating-conic-gradient(
-            from 0deg,
-            rgb(0, 0, 0) 0deg,
-            transparent 1deg 10deg
-            );
-            transform: translate(-50%, -50%);
-            border-radius: 50%;
-            z-index: 1;
-        }`
-    } else {
-        styleElement.innerHTML = `
-        #left-outer::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 200%;
-            height: 200%;
-            background: repeating-conic-gradient(
-            from 0deg,
-            rgb(0, 0, 0) 0deg,
-            transparent 1deg 10deg
-            );
-            transform: translate(-50%, -50%);
-            border-radius: 50%;
-            z-index: 1;
-            animation: spin 10s linear infinite;
-        }
-
-        #right-outer::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 200%;
-            height: 200%;
-            background: repeating-conic-gradient(
-            from 0deg,
-            rgb(0, 0, 0) 0deg,
-            transparent 1deg 10deg
-            );
-            transform: translate(-50%, -50%);
-            border-radius: 50%;
-            z-index: 1;
-            animation: revSpin 10s linear infinite;
-        }`
-    }
-})
 
 function randomColor () {
     const randomColor = `rgb(${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)})`;

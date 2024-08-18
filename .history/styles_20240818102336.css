@@ -56,7 +56,7 @@ body {
     background-color: #ee0d0f;
     display: flex;
     flex-direction: column;
-    width: 1100px;
+    width: 1000px;
     margin-top: 50px;
     padding: 5px 50 50px 50;
     gap: 25px;
@@ -120,27 +120,19 @@ body {
 .grid_buttons_sliders {
     display: flex;
     flex-flow: row nowrap;
-    align-items: flex-start;
-    justify-content: space-between;
+    align-items: center;
+    justify-content: flex-start;
     color: white;
     background-color: var(--bgColor);
     height: 100%;
-    padding-top: 5px;
 }
 
 .color_input {
     display: flex;
-    flex-flow: column wrap;
-    align-items: flex-start;
-    max-height: initial;
+    flex-flow: column nowrap;
+    align-items: center;
+    text-align: left !important;
     gap: 10px;
-}
-
-.color_input_row {
-    display: flex;
-    flex-flow: row nowrap;
-    overflow: scroll;
-    max-height: initial;
 }
 
 .size {
@@ -153,7 +145,6 @@ input#clr_input {
     height: 50px;
     padding: 0;
     margin: 0;
-    margin-left: 10px;
     background-color: var(--bgColor);
     border: none;
     align-self: baseline;
@@ -180,6 +171,7 @@ button, input {
     width: 200px;
     margin: 0;
     margin-top: 5px;
+    margin-bottom: 50px;
     padding: 0;
     height: 20px;
     border-radius: 10px;
@@ -242,66 +234,33 @@ button, input {
 }
 
 .circle-container {
-    display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
-    justify-content: center;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
     width: 100%;
     align-items: center;
-    margin-top: 25px;
 }
 
 .circle {
-    position: relative;
     border: none;
     background-color: white;
     border-radius: 50%;
     width: 150px;
     height: 150px;
     padding: 0;
-    margin: 0;
-    overflow: hidden;
+    margin: 0
 }
 
-#left-outer::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 200%;
-    height: 200%;
-    background: repeating-conic-gradient(
-      from 0deg,
-      rgb(0, 0, 0) 0deg,
-      transparent 1deg 10deg
-    );
-    transform: translate(-50%, -50%);
-    border-radius: 50%;
-    z-index: 1;
-    animation: spin 10s linear infinite;
+#left-outer {
+    margin: 0 0 0 20px;
 }
 
-#right-outer::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 200%;
-    height: 200%;
-    background: repeating-conic-gradient(
-      from 0deg,
-      rgb(0, 0, 0) 0deg,
-      transparent 1deg 10deg
-    );
-    transform: translate(-50%, -50%);
-    border-radius: 50%;
-    z-index: 1;
-    animation: revSpin 10s linear infinite;
+#right-outer {
+    margin: 0 20px 0 0;
 }
-
 
 .inner-circle {
     border: none;
-    position: relative;
     background-color: rgb(198, 198, 198);
     border-radius: 50%;
     width: 80%;
@@ -309,37 +268,8 @@ button, input {
     margin: auto;
     margin-top: 10%;
     padding: 0;
-    z-index: 2;
 }
 
 .circle, .inner-circle {
     flex-shrink: 0;
-}
-
-@keyframes spin {
-    from {
-        transform: translate(-50%, -50%) rotate(0deg); /* Start at 0 degrees */
-    }
-    to {
-        transform: translate(-50%, -50%) rotate(360deg); /* End at 360 degrees */
-    }
-}
-
-@keyframes revSpin {
-    from {
-        transform: translate(-50%, -50%) rotate(0deg); /* Start at 0 degrees */
-    }
-    to {
-        transform: translate(-50%, -50%) rotate(-360deg); /* End at 360 degrees */
-    }
-}
-
-#left-outer {
-    justify-self: flex-start;
-    margin: 0 0 20px 20px;
-}
-
-#right-outer {
-    justify-self: flex-end;
-    margin: 0 20px 20px 0;
 }

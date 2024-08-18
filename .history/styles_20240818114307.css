@@ -262,7 +262,7 @@ button, input {
     overflow: hidden;
 }
 
-#left-outer::before {
+.circle::before {
     content: '';
     position: absolute;
     top: 50%;
@@ -272,32 +272,12 @@ button, input {
     background: repeating-conic-gradient(
       from 0deg,
       rgb(0, 0, 0) 0deg,
-      transparent 1deg 10deg
+      transparent 2deg 10deg
     );
     transform: translate(-50%, -50%);
     border-radius: 50%;
     z-index: 1;
-    animation: spin 10s linear infinite;
-}
-
-#right-outer::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 200%;
-    height: 200%;
-    background: repeating-conic-gradient(
-      from 0deg,
-      rgb(0, 0, 0) 0deg,
-      transparent 1deg 10deg
-    );
-    transform: translate(-50%, -50%);
-    border-radius: 50%;
-    z-index: 1;
-    animation: revSpin 10s linear infinite;
-}
-
+  }
 
 .inner-circle {
     border: none;
@@ -314,24 +294,6 @@ button, input {
 
 .circle, .inner-circle {
     flex-shrink: 0;
-}
-
-@keyframes spin {
-    from {
-        transform: translate(-50%, -50%) rotate(0deg); /* Start at 0 degrees */
-    }
-    to {
-        transform: translate(-50%, -50%) rotate(360deg); /* End at 360 degrees */
-    }
-}
-
-@keyframes revSpin {
-    from {
-        transform: translate(-50%, -50%) rotate(0deg); /* Start at 0 degrees */
-    }
-    to {
-        transform: translate(-50%, -50%) rotate(-360deg); /* End at 360 degrees */
-    }
 }
 
 #left-outer {
