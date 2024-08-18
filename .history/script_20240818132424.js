@@ -62,7 +62,7 @@ function changeColor(square, is_random) {
     
 }
 
-grid_container.addEventListener("mouseup", () => {
+grid_container.addEventListener("mousedown", () => {
     let styleElement = document.getElementById('rotate-circle');
     if (!styleElement) {
         styleElement = document.createElement('style');
@@ -105,13 +105,7 @@ grid_container.addEventListener("mouseup", () => {
         }`
 })
 
-grid_container.addEventListener("mousedown", () => {
-    let styleElement = document.getElementById('rotate-circle');
-    if (!styleElement) {
-        styleElement = document.createElement('style');
-        styleElement.id = 'rotate-circle';
-        document.head.appendChild(styleElement);
-    }
+grid_container.addEventListener("mouseup", () => {
     styleElement.innerHTML = `
         #left-outer::before {
             content: '';
@@ -172,12 +166,20 @@ rand_color.addEventListener("click", () => {
         is_rand = false;
         color_input.style.display = "block";
         color_input_txt.innerHTML = "Color:";
-        rand_color.textContent = "Generate random colors!"
+        grid_slider.classList.remove('rainbow');
     } else {
         is_rand = true;
         color_input.style.display = "none";
         color_input_txt.innerHTML = "Color: Random!!!";
-        rand_color.textContent = "Choose a (static) color"
+
+        let styleElement = document.getElementById('rainbow-thumb');
+        if (!styleElement) {
+            styleElement = document.createElement('style');
+            styleElement.id = 'rainbow-thumb';
+            document.head.appendChild(styleElement);
+        }
+        styleElement.innerHTML = `
+        `
     }
 });
 
@@ -197,7 +199,9 @@ color_input.addEventListener("input", () => {
         border: black 2px solid;  
         background: white;
         outline: none;
+        opacity: 0.8;
         -webkit-transition: .2s;
+        transition: opacity .2s;
     }
 
     #grid_slider:hover {

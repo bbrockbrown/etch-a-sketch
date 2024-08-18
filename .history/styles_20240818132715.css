@@ -30,13 +30,6 @@ body {
     color: black;
 }
 
-#title_text {
-    font-family: 'Courier new', sans-serif;
-    font-size: 32px;
-    margin: 40px 0 0 0;
-    padding: 0;
-}
-
 .header {
     text-align: center;
     overflow: hidden;
@@ -68,10 +61,10 @@ body {
     padding: 5px 50 50px 50;
     gap: 25px;
     align-items: center;
-    overflow: hidden;
+    overflow: scroll;
     border-radius: 32px;
-    box-shadow: 0px 0px 20px rgba(184, 0, 0, 0.5);
-    border: solid #a90303 4px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+    border: solid #760000 4px;
 }
 
 
@@ -104,8 +97,6 @@ body {
     min-width: 750px;
     max-width: 750px;
     flex-grow: 1;
-    border-radius: 3%;
-    overflow: hidden;
 }
 
 
@@ -243,8 +234,6 @@ button, input {
     cursor: pointer;
     transition: transform 0.2s, box-shadow 0.2s;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-    min-width: 250px;
-    max-width: 250px;
 }
 
 #clear_grid:hover, #rand_clr:hover {
@@ -273,7 +262,16 @@ button, input {
     overflow: hidden;
 }
 
-.circle::before {
+.circle::after {
+    background: repeating-conic-gradient(
+            from 0deg,
+            rgb(0, 0, 0) 0deg,
+            transparent 1deg 10deg
+            );
+}
+
+/*
+#left-outer::before {
     content: '';
     position: absolute;
     top: 50%;
@@ -281,15 +279,34 @@ button, input {
     width: 200%;
     height: 200%;
     background: repeating-conic-gradient(
-    from 0deg,
-    rgb(0, 0, 0) 0deg,
-    transparent 1deg 10deg
+      from 0deg,
+      rgb(0, 0, 0) 0deg,
+      transparent 1deg 10deg
     );
     transform: translate(-50%, -50%);
     border-radius: 50%;
     z-index: 1;
+    animation: spin 10s linear infinite;
 }
 
+#right-outer::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200%;
+    height: 200%;
+    background: repeating-conic-gradient(
+      from 0deg,
+      rgb(0, 0, 0) 0deg,
+      transparent 1deg 10deg
+    );
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: 1;
+    animation: revSpin 10s linear infinite;
+}
+*/
 
 .inner-circle {
     border: none;
@@ -334,11 +351,4 @@ button, input {
 #right-outer {
     justify-self: flex-end;
     margin: 0 20px 20px 0;
-}
-
-#logo {
-    height: 25px;
-    width: 25px;
-    vertical-align: middle;
-    margin-left: 5px;
 }

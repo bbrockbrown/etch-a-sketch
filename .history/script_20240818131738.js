@@ -62,29 +62,30 @@ function changeColor(square, is_random) {
     
 }
 
-grid_container.addEventListener("mouseup", () => {
+grid_container.addEventListener("mousedown", () => {
     let styleElement = document.getElementById('rotate-circle');
     if (!styleElement) {
         styleElement = document.createElement('style');
         styleElement.id = 'rotate-circle';
         document.head.appendChild(styleElement);
     }
-    styleElement.innerHTML = `
+    if (isRotating) {
+        styleElement.innerHTML = `
         #left-outer::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 200%;
-            height: 200%;
-            background: repeating-conic-gradient(
-            from 0deg,
-            rgb(0, 0, 0) 0deg,
-            transparent 1deg 10deg
-            );
-            transform: translate(-50%, -50%);
-            border-radius: 50%;
-            z-index: 1;
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 200%;
+        height: 200%;
+        background: repeating-conic-gradient(
+        from 0deg,
+        rgb(0, 0, 0) 0deg,
+        transparent 1deg 10deg
+        );
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        z-index: 1;
         }
 
         #right-outer::before {
@@ -103,16 +104,9 @@ grid_container.addEventListener("mouseup", () => {
             border-radius: 50%;
             z-index: 1;
         }`
-})
-
-grid_container.addEventListener("mousedown", () => {
-    let styleElement = document.getElementById('rotate-circle');
-    if (!styleElement) {
-        styleElement = document.createElement('style');
-        styleElement.id = 'rotate-circle';
-        document.head.appendChild(styleElement);
-    }
-    styleElement.innerHTML = `
+        isRotating = false;
+    } else {
+        styleElement.innerHTML = `
         #left-outer::before {
             content: '';
             position: absolute;
@@ -148,6 +142,8 @@ grid_container.addEventListener("mousedown", () => {
             z-index: 1;
             animation: revSpin 10s linear infinite;
         }`
+        isRotating = true;
+    }
 })
 
 function randomColor () {
@@ -172,12 +168,20 @@ rand_color.addEventListener("click", () => {
         is_rand = false;
         color_input.style.display = "block";
         color_input_txt.innerHTML = "Color:";
-        rand_color.textContent = "Generate random colors!"
+        grid_slider.classList.remove('rainbow');
     } else {
         is_rand = true;
         color_input.style.display = "none";
         color_input_txt.innerHTML = "Color: Random!!!";
-        rand_color.textContent = "Choose a (static) color"
+
+        let styleElement = document.getElementById('rainbow-thumb');
+        if (!styleElement) {
+            styleElement = document.createElement('style');
+            styleElement.id = 'rainbow-thumb';
+            document.head.appendChild(styleElement);
+        }
+        styleElement.innerHTML = `
+        `
     }
 });
 
@@ -197,7 +201,9 @@ color_input.addEventListener("input", () => {
         border: black 2px solid;  
         background: white;
         outline: none;
+        opacity: 0.8;
         -webkit-transition: .2s;
+        transition: opacity .2s;
     }
 
     #grid_slider:hover {

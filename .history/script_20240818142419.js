@@ -197,7 +197,9 @@ color_input.addEventListener("input", () => {
         border: black 2px solid;  
         background: white;
         outline: none;
+        opacity: 0.8;
         -webkit-transition: .2s;
+        transition: opacity .2s;
     }
 
     #grid_slider:hover {

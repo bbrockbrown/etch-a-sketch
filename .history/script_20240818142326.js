@@ -172,12 +172,10 @@ rand_color.addEventListener("click", () => {
         is_rand = false;
         color_input.style.display = "block";
         color_input_txt.innerHTML = "Color:";
-        rand_color.textContent = "Generate random colors!"
     } else {
         is_rand = true;
         color_input.style.display = "none";
         color_input_txt.innerHTML = "Color: Random!!!";
-        rand_color.textContent = "Choose a (static) color"
     }
 });
 
@@ -197,7 +195,9 @@ color_input.addEventListener("input", () => {
         border: black 2px solid;  
         background: white;
         outline: none;
+        opacity: 0.8;
         -webkit-transition: .2s;
+        transition: opacity .2s;
     }
 
     #grid_slider:hover {
