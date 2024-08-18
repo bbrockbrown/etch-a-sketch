@@ -21,7 +21,8 @@ html, body {
 
 body {
     display: flex;
-    flex-flow: column wrap;
+    flex-flow: column nowrap;
+    overflow: scroll;
     justify-content: flex-start;
     align-items: center;
     background-color: #ff000487;
@@ -69,11 +70,14 @@ body {
     display: flex;
     flex-direction: column;
     width: 1100px;
+    height: 1045px;
+    min-width: 1100px;
+    min-height: 1045px;
     margin-top: 50px;
     padding: 5px 50 50px 50;
     gap: 25px;
     align-items: center;
-    overflow: hidden;
+    overflow: scroll;
     border-radius: 32px;
     box-shadow: 0px 0px 20px rgba(184, 0, 0, 0.5);
     border: solid #a90303 4px;
@@ -88,6 +92,7 @@ body {
     width: 100%;
     height: 100%;
     background-color: var(--bgColor);
+    overflow: scroll;
 }
 
 
@@ -111,7 +116,7 @@ body {
     margin-bottom: 25px;
     flex-grow: 1;
     border-radius: 3%;
-    overflow: hidden;
+    overflow: scroll;
 }
 
 
@@ -154,7 +159,7 @@ body {
 .color_input_row {
     display: flex;
     flex-flow: row nowrap;
-    overflow: hidden;
+    overflow: scroll;
     max-height: initial;
     margin-top: 10px;
 }
@@ -279,7 +284,7 @@ button, input {
     height: 150px;
     padding: 0;
     margin: 0;
-    overflow: hidden;
+    overflow: scroll;
 }
 
 .circle::before {
