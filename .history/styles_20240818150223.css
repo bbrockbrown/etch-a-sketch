@@ -24,7 +24,7 @@ body {
     flex-flow: column wrap;
     justify-content: flex-start;
     align-items: center;
-    background-color: #ff000487;
+    background-color: rgb(250, 242, 201)smoke;
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
     color: black;
@@ -156,7 +156,6 @@ body {
     flex-flow: row nowrap;
     overflow: hidden;
     max-height: initial;
-    margin-top: 10px;
 }
 
 .size {
@@ -165,7 +164,7 @@ body {
 }
 
 input#clr_input {
-    width: 108px;
+    width: 80px;
     height: 40px;
     padding: 0;
     margin: 0;
@@ -223,7 +222,6 @@ button, input {
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
-    gap: 40px;
 }
 
 #clear_grid {
@@ -238,7 +236,7 @@ button, input {
     min-width: min-content;
     border-radius: 4px;
     border: 2px solid black;
-    margin-top: 10px;
+    margin-bottom: 20px;
 }
 
 #clear_grid, #rand_clr {

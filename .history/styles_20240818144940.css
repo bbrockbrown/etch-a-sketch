@@ -24,18 +24,13 @@ body {
     flex-flow: column wrap;
     justify-content: flex-start;
     align-items: center;
-    background-color: #ff000487;
+    background-color: rgb(250, 242, 201)smoke;
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
     color: black;
 }
 
 #title_text {
-    flex-shrink: 0;
-    white-space: nowrap;
-}
-
-#title {
     font-family: 'Courier new', sans-serif;
     font-size: 32px;
     margin: 40px 0 0 0;
@@ -108,7 +103,6 @@ body {
     width: 750px;
     min-width: 750px;
     max-width: 750px;
-    margin-bottom: 25px;
     flex-grow: 1;
     border-radius: 3%;
     overflow: hidden;
@@ -148,7 +142,7 @@ body {
     flex-flow: column wrap;
     align-items: flex-start;
     max-height: initial;
-    gap: 25px;
+    gap: 10px;
 }
 
 .color_input_row {
@@ -156,7 +150,6 @@ body {
     flex-flow: row nowrap;
     overflow: hidden;
     max-height: initial;
-    margin-top: 10px;
 }
 
 .size {
@@ -165,7 +158,7 @@ body {
 }
 
 input#clr_input {
-    width: 108px;
+    width: 80px;
     height: 40px;
     padding: 0;
     margin: 0;
@@ -223,7 +216,6 @@ button, input {
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
-    gap: 40px;
 }
 
 #clear_grid {
@@ -238,7 +230,7 @@ button, input {
     min-width: min-content;
     border-radius: 4px;
     border: 2px solid black;
-    margin-top: 10px;
+    margin-bottom: 20px;
 }
 
 #clear_grid, #rand_clr {
@@ -268,6 +260,7 @@ button, input {
     justify-content: center;
     width: 100%;
     align-items: center;
+    margin-top: 25px;
 }
 
 .circle {
