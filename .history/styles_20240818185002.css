@@ -54,7 +54,7 @@ body {
 .chrome {
 	font-size: 3em;
     font-weight: bold;
-    font-family: 'EtchFont', 'Courier new', sans-serif;
+    font-family: 'EtchFont', sans-serif;
     font-size: 70px;
     width: 100%;
     background: linear-gradient(90deg, #fff, var(--header_text_color), white, var(--header_text_color), white);
@@ -284,7 +284,7 @@ button, input {
     height: 150px;
     padding: 0;
     margin: 0;
-    overflow: hidden;
+    overflow: scroll;
 }
 
 .circle::before {
