@@ -73,7 +73,7 @@ body {
     height: 850px;
     min-width: 900px;
     min-height: 850px;
-    margin-top: 15px;
+    margin-top: 40px;
     padding: 5px 40px 40px 40px;
     gap: 20px;
     align-items: center;
@@ -86,7 +86,7 @@ body {
 
 .main {
     display: flex;
-    flex-flow: column nowrap;
+    flex-flow: column wrap;
     align-items: center;
     flex-grow: 1;
     width: 100%;
@@ -116,10 +116,10 @@ body {
     background-color: white;
     display: flex;
     flex-flow: row wrap;
-    height: 600px;
-    width: 600px;
-    min-width: 600px;
-    max-width: 600px;
+    height: 550px;
+    width: 550px;
+    min-width: 550px;
+    max-width: 100%;
     margin-bottom: 20px;
     flex-grow: 1;
     border-radius: 3%;
@@ -281,8 +281,8 @@ p, #color_input_txt {
     border: none;
     background-color: white;
     border-radius: 50%;
-    width: 125px;
-    height: 125px;
+    width: 150px;
+    height: 150px;
     padding: 0;
     margin: 0;
     overflow: hidden;

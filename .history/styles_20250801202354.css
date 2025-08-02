@@ -86,7 +86,7 @@ body {
 
 .main {
     display: flex;
-    flex-flow: column nowrap;
+    flex-flow: column wrap;
     align-items: center;
     flex-grow: 1;
     width: 100%;
