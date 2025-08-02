@@ -59,6 +59,7 @@ body {
     width: 100%;
     background: linear-gradient(90deg, #fff, var(--header_text_color), white, var(--header_text_color), white);
     background-size: 200%;
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: chrome var(--duration) linear infinite;
@@ -202,6 +203,7 @@ p, #color_input_txt {
 
 #grid_slider {
     -webkit-appearance: none;
+    appearance: none;
     width: 200px;
     margin: 0;
     margin-top: 5px;
